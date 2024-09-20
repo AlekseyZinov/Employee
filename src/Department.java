@@ -11,15 +11,19 @@ public class Department {
         return boss;
     }
 
-    public void setBoss(Employee boss) {
-        this.boss = boss;
+    public void setBoss(Employee boss) throws Exception {
+        if(department.equals(boss.getDep())) {
+            this.boss = boss;
+        } else {
+            throw new Exception("The boss is not an employee of the department");
+        }
     }
 
     public String getDepartment() {
         return department;
     }
 
-    public void setDepartment(String department) {
+    public void setDep(String department) {
         this.department = department;
     }
 
